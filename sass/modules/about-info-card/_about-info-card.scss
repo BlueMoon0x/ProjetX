@@ -1,0 +1,53 @@
+.te-about-info-card {
+  .te-about-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .te-section-title {
+      margin-bottom: 0;
+      .title {
+        margin-bottom: 0;
+      }
+    }
+    .te-list-item-wrapper {
+      gap: 30px;
+      
+      .te-list-item {  
+        gap: 20px; 
+
+        .icon {
+          font-size: 15px;
+          color: $white;
+          background-color: $gray-700;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          border-radius: 50%;
+        }
+        .text {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 31px;
+          letter-spacing: 0.5px;
+          color: $white;
+
+          @include sm {
+            font-size: 18px;
+          }
+
+          @include md {
+            font-size: 18px;
+          }
+
+          @include lg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

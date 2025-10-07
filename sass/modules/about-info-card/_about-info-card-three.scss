@@ -1,0 +1,70 @@
+.te-about-info-card {
+    &.style-three {
+      .te-section-title {
+        margin-bottom: 40px;
+      }
+      .about-info-wrapper {
+        display: flex;
+
+        @include sm {
+          flex-direction: column;
+        }
+
+        .about-info-img {
+          border-radius: 12px;
+          overflow: hidden;
+          flex-shrink: 0;
+
+          @include sm {
+            height: 350px;
+          }
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .te-about-info-content {
+        padding-left: 50px;
+        gap: 30px;
+
+        @include sm {
+          padding-left: 0;
+          padding-top: 50px;
+        }
+        .skill-progressbar-wrapper {
+          width: 100%;
+        }
+        .te-icon-card-wrapper {
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+
+          .te-icon-card {
+            width: 50%;
+            padding: 0;
+            gap: 20px;
+            flex-direction: column;
+            margin-bottom: 0;
+
+            .icon {
+              width: 40px;
+              height: 40px;
+            }
+            .content {
+              gap: 4px;
+
+              .title {
+                font-size: 18px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+        .te-btn-wrapper {
+          margin-top: 7px;
+        }
+      }
+    }
+}

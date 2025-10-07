@@ -1,0 +1,38 @@
+.te-icon-card {
+  &.style-3 {
+    padding: 40px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: $gray-700;
+
+    &:hover {
+      top: -5px;
+    }
+    .content {
+      display: unset;
+    }
+    .title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .te-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      font-size: 22px;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img,
+      i {
+        position: relative;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.te-team-card {
+  &.style-2 {
+
+    &:hover {
+      .te-content-wrapper {
+        .content {
+          background-color: transparent;
+        }
+      }
+    }
+    .te-content-wrapper {
+      transform: unset;
+      padding: 0;
+
+      .content {
+        clip-path: none;
+        background-color: transparent;
+        text-align: center;
+
+        &:before {
+          display: none;
+        }
+        .social {
+          justify-content: center;
+        }
+      }
+    }
+    .image-wrapper {
+      width: 370px;
+      height: 370px;
+      margin: 0 auto;
+      border-radius: 500px;
+      align-items: center;
+      display: flex;
+      position: relative;
+      border: 1px solid transparent;
+      background:
+              linear-gradient(to bottom, #060606, #060606),
+              linear-gradient(to bottom, rgba(217, 168, 7, 1) , #060606);
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+
+      @include rmaxwd(991) {
+        width: 300px;
+        height: 300px;
+      }
+
+    }
+    .image {
+      width: 310px;
+      height: 310px;
+      border-radius: 500px;
+      border: 20px solid transparent;
+      margin: 0 auto;
+      position: relative;
+      outline: 1px solid #D9A807;
+
+      @include rmaxwd(991) {
+        width: 250px;
+        height: 250px;
+        border: 10px solid transparent;
+      }
+    }
+  }
+}

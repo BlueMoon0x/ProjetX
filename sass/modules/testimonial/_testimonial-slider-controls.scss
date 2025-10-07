@@ -1,0 +1,58 @@
+.te-testimonial-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .slick-list {
+    margin: 0 -15px;
+
+    .slick-slide {
+      margin: 0 15px;
+      @include transition;
+    }
+  }
+
+
+  .slick-dots {
+    display: flex;
+    gap: 18px;
+    padding-left: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 0;
+    
+    li {
+      display: inline-block;
+      line-height: 0;
+      outline: 2px solid transparent;
+      border: 5px solid transparent;
+      border-radius: 50px;
+      @include transition;
+
+      button {
+        font-size: 2px;
+        text-indent: -9999px;
+        padding: 0;
+        width: 10px;
+        height: 10px;
+        background-color: $blue-color;
+        border-radius: 50px;
+        position: relative;
+        @include transition;
+      }
+      &.slick-active {
+        @include transition;
+        outline: 2px solid $blue-color;
+
+        button {
+          @include transition;
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+
+}
+

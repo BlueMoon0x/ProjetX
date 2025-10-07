@@ -1,0 +1,49 @@
+.te-info-card {
+    &.style-3 {
+        padding: 40px;
+        background: $gray-700;
+        border: none;
+
+        .read-btn {
+            margin-left: auto;
+            a {
+                font-size: 36px;
+                color: rgba(255, 255, 255, 0.2);
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+        .te-content-wrapper {
+            gap: 40px 20px;
+
+            .te-title-wrapper {
+                padding: 0;
+                flex-direction: row;
+                align-items: center;
+
+                .icon {
+                    padding: 0;
+                    border: 0;
+                    width: unset;
+                    height: unset;
+                }
+            }
+        }
+        .content {
+            gap: 13px;
+            margin-bottom: 0;
+
+            .title {
+                font-family: $body-font;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: initial;
+                color: $white;
+                margin-bottom: 0;
+                width: 100%;
+            }
+        }
+    }
+}

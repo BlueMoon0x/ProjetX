@@ -1,0 +1,54 @@
+.te-counter-card {
+  &.style-two {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .te-counter-item {
+      text-align: left;
+
+      @include md {
+        text-align: center;
+      }
+
+
+      .te-counter-title {
+        flex-direction: row;
+        gap: 30px;
+
+        @include md {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+      .counter-content {
+        width: 100%;
+        .text {
+          br {
+            @include rmaxwd(280) {
+              display: none;
+            }
+          }
+        }
+      }
+      .number {
+        font-size: 90px;
+
+        @include md {
+          font-size: 48px;
+          line-height: 50px;
+        }
+        @include sm {
+          font-size: 48px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}

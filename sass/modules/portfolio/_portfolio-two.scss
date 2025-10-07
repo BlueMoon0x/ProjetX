@@ -1,0 +1,233 @@
+.portfolio-column-in-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item {
+    height: 576px;
+    position: relative;
+
+    &:hover {
+      .portfolio-img {
+        img {
+          transform: scale(1.1);
+          @include transition;
+        }
+      }
+      .content-wrapper {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        @include transition;
+      }
+    }
+
+    //@include md {
+    //  height: 235px;
+    //}
+    //
+    //@include lg {
+    //  height: 285px;
+    //}
+    //
+    //&:nth-child(5n + 1) {
+    //  grid-row: span 2;
+    //  height: 804px !important;
+    //
+    //  @include sm {
+    //    height: 388px !important;
+    //  }
+    //
+    //  @include md {
+    //    height: 500px !important;
+    //  }
+    //
+    //  @include lg {
+    //    height: 600px !important;
+    //  }
+    //}
+    //&:first-child {
+    //  grid-row: span 2;
+    //  height: 804px !important;
+    //
+    //  @include sm {
+    //    height: 388px !important;
+    //  }
+    //
+    //  @include md {
+    //    height: 500px !important;
+    //  }
+    //
+    //  @include lg {
+    //    height: 600px !important;
+    //  }
+    //}
+
+  }
+
+}
+
+.portfolio-item {
+  height: 576px;
+  position: relative;
+
+  &:hover {
+    .portfolio-img {
+      &:before {
+        height: 250%;
+        transition: all 900ms linear;
+        background-color: transparent;
+      }
+      img {
+        transform: scale(1.1);
+        @include transition;
+      }
+    }
+    .content-wrapper {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+      @include transition;
+    }
+  }
+  .content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: scale(0.75);
+    opacity: 0;
+    visibility: hidden;
+    @include transition;
+    background: linear-gradient(180deg, rgba(27, 24, 26, 0.00) 0%, rgba(27, 24, 26, 0.70) 100%);
+    z-index: 99;
+
+    @include md {
+      padding: 30px;
+    }
+
+    @include sm {
+      padding: 20px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      background-color: $gray-700;
+      padding: 40px 30px;
+      justify-content: space-between;
+      align-items: center;
+
+      @include sm {
+        flex-direction: column-reverse;
+      }
+
+      .icon {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+      }
+
+      .title {
+        font-family: $heading-font;
+        margin-bottom: 0;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: initial;
+
+        @include sm {
+          font-size: 22px;
+        }
+
+        @include md {
+          font-size: 24px;
+          line-height: initial;
+        }
+
+        @include lg {
+          font-size: 32px;
+          line-height: initial;
+        }
+      }
+    }
+  }
+
+  .portfolio-img {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      width: 200%;
+      height: 0%;
+      left: 50%;
+      top: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) rotate(-45deg);
+      content: "";
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      transform: scale(1);
+      @include transition;
+    }
+  }
+}
+
+// Portfolio Slider
+.portfolio-slider-wrapper,
+.portfolio-slider{
+    &.style-2 {
+      .slick-list {
+        margin: 0 -15px;
+        visibility: visible !important;
+
+        .custom-width {
+          width: 950px;
+        }
+
+        .slick-slide {
+          margin: 0 15px;
+
+          &.slick-center {
+            .portfolio-item {
+
+              .portfolio-img {
+                img {
+                  transform: scale(1.1);
+                  @include transition;
+                }
+              }
+
+              .content-wrapper {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+                @include transition;
+                margin-bottom: -100px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+}

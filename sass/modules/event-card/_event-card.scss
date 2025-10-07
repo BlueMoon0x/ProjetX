@@ -1,0 +1,74 @@
+.event-card {
+  display: flex;
+
+  .image-wrapper {
+    width: 410px;
+    flex-shrink: 0;
+    position: relative;
+    margin-bottom: 20px;
+
+    .post-date {
+      position: absolute;
+      top: 0%;
+      transform: translateY(-50%);
+      left: 20px;
+      text-transform: uppercase;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+  .content-wrapper {
+    background-color: $gray-700;
+    padding: 50px;
+    border: 1px solid #1C1C1C;
+
+    .title {
+      font-size: 48px;
+      line-height: initial;
+    }
+
+    .te-theme-btn {
+      border-color: $gray-200;
+      background-color: transparent;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+.event-card-wrapper {
+  display: flex;
+  gap: 120px;
+  flex-direction: column;
+
+  .event-card {
+    &:nth-child(odd) {
+      flex-direction: row;
+    }
+  }
+  .event-card {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+}

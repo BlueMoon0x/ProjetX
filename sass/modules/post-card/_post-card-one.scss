@@ -1,0 +1,218 @@
+.latest-post-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+
+  @include rmaxwd(1199) {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+.latest-post-card {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  background-color: $gray-700;
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.1);
+        @include transition;
+      }
+      &:before {
+        visibility: visible;
+        opacity: 1;
+        @include transition;
+      }
+      .btn-link {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        visibility: visible;
+        opacity: 1;
+        @include transition;
+      }
+    }
+  }
+  .image {
+    overflow: hidden;
+    position: relative;
+
+    img {
+      transform: scale(1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include transition;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(36, 36, 55, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      @include transition;
+      z-index: 1;
+    }
+    .btn-link {
+      width: 72px;
+      height: 72px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-color;
+      color: $white;
+      font-size: 24px;
+      text-decoration: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.3);
+      opacity: 0;
+      visibility: hidden;
+      @include transition;
+      z-index: 2;
+
+      @include md {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+      }
+      @include sm {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      i {
+        transform: rotate(-45deg);
+        @include transition;
+      }
+
+      &:hover {
+        background-color: $blue-color;
+        @include transition;
+
+        i {
+          transform: rotate(0deg);
+          @include transition
+        }
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+      .title {
+        height: 65px;
+        overflow: hidden;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 31px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+
+        @include sm {
+          font-size: 22px;
+          line-height: 28px;
+          height: unset;
+          overflow: visible;
+        }
+
+       a {
+         &:hover {
+           color: $primary-color;
+           @include transition;
+         }
+       }
+      }
+
+  }
+  .post-meta {
+    display: inline-flex;
+    gap: 5px 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    .single-post-meta {
+      color: #8f939b;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 500;
+      font-family: $body-font;
+      margin: 0;
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      flex-shrink: 0;
+
+      i {
+        color: $primary-color;
+        @include transition;
+
+      }
+
+      a {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        flex-shrink: 0;
+        color: #8f939b;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+
+  &.style-1 {
+
+    @include sm {
+      flex-direction: column;
+    }
+    .image {
+      width: 230px;
+      height: 180px;
+      flex-shrink: 0;
+
+      @include sm {
+        width: 100%;
+        height: 300px;
+      }
+      @include lg {
+        width: 200px;
+      }
+      @include xl {
+        width: 200px;
+      }
+    }
+  }
+  &.style-2 {
+    flex-direction: column;
+    grid-row: span 3;
+
+    .image {
+        height: 428px;
+
+        @include sm {
+            height: 300px;
+        }
+    }
+    .post-meta {
+        margin-top: 5px;
+    }
+}
+}

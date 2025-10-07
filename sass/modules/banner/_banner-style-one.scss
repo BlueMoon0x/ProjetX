@@ -1,0 +1,411 @@
+.slider-area {
+    overflow: hidden;
+    position: relative;
+
+    .te-slider-label {
+        font-size: 105px;
+        font-weight: 700;
+        line-height: initial;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-180deg);
+        left: 90px;
+        color: $primary-color;
+        opacity: 0.2;
+        writing-mode: tb-rl;
+
+        @include md {
+            left: 20px;
+            font-size: 70px;
+        }
+        @include sm {
+            display: none;
+        }
+    }
+
+    .te-slider-wrapper {
+
+        // Active Slider Animate
+        .slick-active .te-slider-short-title,
+        .slick-active .te-slider-title,
+        .slick-active .te-slider-short-desc,
+        .slick-active .te-slider-btn-wrapper {
+            -webkit-animation-name: MovefadeUp;
+            animation-name: MovefadeUp;
+            -webkit-animation-fill-mode: both;
+        }
+
+
+        .slick-active .te-slider-short-title {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+            -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+        }
+        .slick-active .te-slider-title {
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+
+        .slick-active .te-slider-short-desc {
+            -webkit-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+            -webkit-animation-duration: 0.7s;
+            animation-duration: 0.7s;
+        }
+
+        .slick-active .te-slider-btn-wrapper {
+            -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+            -webkit-animation-duration: 0.9s;
+            animation-duration: 0.9s;
+        }
+
+        // Slick Arrow Button
+        .slider-arrow-btn {
+            width: 70px;
+            height: 70px;
+            background-color: $primary-color;
+            opacity: 0.2;
+            color: $white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            padding: 0;
+            z-index: 9;
+            border-radius: 50px;
+            @include transition;
+
+
+            &.prev-btn {
+               left: -35px;
+
+                i {
+                    position: relative;
+                    left: 12px;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            &.next-btn {
+               right: -35px;
+                i {
+                    position: relative;
+                    left: -12px;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+        }
+
+        // Slick Dots
+        .slick-dots {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include sm {
+                display: none !important;
+                position: relative;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: 30px;
+                bottom: 70px;
+                top: unset;
+                left: unset;
+                right: unset;
+                transform: none;
+            }
+
+            li {
+                display: inline-block;
+                line-height: 0;
+                @include transition;
+
+                button {
+                    font-size: 2px;
+                    text-indent: -9999px;
+                    padding: 0;
+                    width: 10px;
+                    height: 10px;
+                    background-color: $primary-color;
+                    position: relative;
+                    @include transition;
+
+                    &:hover {
+                        background-color: $primary-color;
+                        @include transition;
+                    }
+                }
+                &.slick-active {
+                    @include transition;
+
+                    button {
+                        @include transition;
+                    }
+                }
+            }
+        }
+    }
+
+    .te-single-slider {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        .te-single-slider-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
+        }
+
+        .te-slider-container {
+            display: flex;
+            padding: 120px 0;
+            gap: 30px;
+
+            @include sm {
+                flex-direction: column;
+                padding: 80px 0;
+                text-align: center;
+            }
+            @include md {
+                padding: 100px 0;
+                align-items: center;
+            }
+            .te-slider-column {
+                width: 50%;
+                flex-grow: 1;
+                align-self: center;
+
+                @include sm {
+                    width: 100%;
+                }
+            }
+        }
+        .te-slider-content-wrapper {
+            position: relative;
+            z-index: 99;
+
+            .te-slider-content {
+                .te-slider-short-title {
+                    font-family: $body-font;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 26px;
+                    letter-spacing: 2px;
+                    color: $primary-color;
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+                .te-slider-title {
+                    color: $white;
+                    font-family: $body-font;
+                    font-size: 97px;
+                    font-weight: 700;
+                    line-height: 88px;
+                    margin-bottom: 30px;
+
+                    br {
+                        @include sm {
+                            display: none;
+                        }
+                    }
+
+                    span {
+                        color: $primary-color;
+                    }
+
+                    @media only screen and (min-width: 992px) and (max-width: 1500px){
+                        font-size: 60px;
+                        line-height: 64px;
+                    }
+
+                    @include lg {
+                        font-size: 48px;
+                        line-height: 56px;
+                    }
+                    @include md {
+                        font-size: 42px;
+                        line-height: 52px;
+                    }
+                    @include sm {
+                        font-size: 38px;
+                        line-height: 44px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .te-slider-short-desc {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 28px;
+                    color: $white;
+
+                    @include lg {
+                        font-size: 18px;
+                        line-height: 32px;
+                    }
+                    @include md {
+                        font-size: 18px;
+                        line-height: 32px;
+                    }
+                    @include sm {
+                        font-size: 18px;
+                        line-height: 32px;
+                    }
+                }
+                .te-slider-btn-wrapper {
+                    padding-top: 52px;
+                    display: flex;
+                    align-items: center;
+                    gap: 27px;
+                    flex-wrap: wrap-reverse;
+
+
+                    @include sm {
+                        padding-top: 30px;
+                        justify-content: center;
+                    }
+
+                    .te-call-btn {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        .te-icon {
+                            width: 55px;
+                            height: 55px;
+                            border-radius: 50px;
+                            flex-shrink: 0;
+                            border: 1px solid $primary-color;
+                            font-size: 20px;
+                            font-weight: 900;
+                            color: $white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            animation: ripple 4s infinite;
+                            box-shadow: 0 0 0 0 $primary-color;
+                        }
+                        .te-content {
+                            display: flex;
+                            flex-direction: column;
+
+                            .te-title {
+                                font-size: 18px;
+                                font-weight: 500;
+                                line-height: 24px;
+                                color: #335371;
+                            }
+                            .te-text {
+                                font-size: 18px;
+                                font-weight: 700;
+                                line-height: 26px;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .te-slider-image {
+            position: relative;
+            z-index: 2;
+            margin-top: inherit;
+            animation: MoveLeftRight 2s linear infinite alternate;
+            text-align: left;
+
+            .slider-feature {
+                display: inline-flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .single-slider-feature {
+
+                    .slider-feature-img {
+
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-2 {
+        .te-single-slider {
+
+            .te-slider-container {
+                @include rmaxwd(991) {
+                    flex-direction: column-reverse;
+                }
+                .te-slider-column {
+                    width: unset;
+
+                    &.image-wrapper {
+                        width: 500px;
+                        flex-shrink: 0;
+                    }
+                }
+                .te-slider-short-desc {
+                    br {
+                        @include sm {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .te-slider-bg-img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                clip-path: polygon(0 10%, 0% 100%, 60% 100%);
+                width: 100%;
+                height: 100%;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}

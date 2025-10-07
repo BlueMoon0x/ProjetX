@@ -1,0 +1,76 @@
+// Brand Marquee Area
+.te-marquee-area {
+  overflow: hidden;
+
+  .te-marquee-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+
+    &.first-te-marquee{
+      animation: Scroll 32s linear infinite;
+
+      .single-te-marquee {
+        &:nth-child(even) {
+          .te-marquee-title {
+            color: $text-color;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1px;
+          }
+        }
+      }
+    }
+    &.second-te-marquee{
+      animation: Scroll 32s linear infinite;
+      animation-direction: reverse;
+
+      .single-te-marquee {
+        .te-marquee-title {
+          span {
+            color: $primary-color;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1px;
+          }
+        }
+      }
+    }
+  }
+  .single-te-marquee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+
+    &:last-child {
+      .te-marquee-star {
+        display: none;
+      }
+    }
+    .te-marquee-title {
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 80px;
+      white-space: nowrap;
+      font-family: $heading-font;
+      color: $text-color;
+
+       @include sm {
+         font-size: 60px;
+         line-height: initial;
+       }
+       @include md {
+         font-size: 70px;
+         line-height: initial;
+       }
+    }
+    .te-marquee-icon {
+      font-size: 49px;
+      font-weight: 700;
+      color: $primary-color;
+      white-space: nowrap;
+      line-height: 0;
+      width: 64px;
+    }
+  }
+}

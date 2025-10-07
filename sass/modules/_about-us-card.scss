@@ -1,0 +1,16 @@
+.about-us-card {
+    .te-section-title {
+        margin-bottom: 15px;
+    }
+    .te-list-item-wrapper {
+        flex-direction: row;
+        gap: 20px 56px;
+        flex-wrap: wrap;
+
+        .te-list-item {
+            .text {
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.banner-info-card {
+    &.style-2 {
+        margin-top: 18px;
+    }
+    &.style-3 {
+        padding: 10px;
+        border-radius: 10px;
+        background: linear-gradient(98deg, rgba(2, 193, 115, 0.20) -7.42%, rgba(2, 193, 115, 0.00) 75.72%);
+        margin-bottom: 30px;
+        
+        .content-wrapper {
+            .content {
+                padding: 20px 30px 10px 30px;
+            }
+        }
+    }
+
+    .content-wrapper {
+        .title {
+            font-size: 49px;
+            font-weight: 700;
+            line-height: 55.65px;
+            letter-spacing: -1.59px;
+            margin-bottom: 20px;
+
+            span {
+                color: #ffffff;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-width: 1px;
+            }
+        }
+        .content {
+            color: $text-color;
+            margin-bottom: 20px;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .image {
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+}

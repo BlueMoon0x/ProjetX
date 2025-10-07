@@ -1,0 +1,40 @@
+.te-counter-card {
+    &.style-three {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .te-counter-item {
+            text-align: left;
+            padding: 60px 40px;
+            background: $primary-color;
+            border-radius: 8px;
+
+            .te-counter-title {
+                flex-direction: row;
+                gap: 30px;
+                .title {
+                    margin: 0;
+                    color: $white;
+                    font-size: 18px;
+                    line-height: 30px;
+                    font-weight: 500;
+                }
+            }
+            .number {
+                margin: 0;
+                color: $white;
+                font-size: 60px;
+                line-height: 60px;
+                font-weight: 500;
+                @include sm {
+                    font-size: 48px;
+                    line-height: 52px;
+                }
+            }
+            @include sm {
+                padding: 40px 30px;
+            }
+        }
+    }
+}

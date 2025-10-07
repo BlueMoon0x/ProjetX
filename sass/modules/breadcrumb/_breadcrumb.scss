@@ -1,0 +1,133 @@
+.page-breadcrumb-area {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  position: relative;
+  z-index: 2;
+
+  @include rmaxwd(991) {
+    padding: 100px 0;
+  }
+  @include rmaxwd(767) {
+    padding: 80px 0;
+  }
+
+  .page-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .page-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+.page-heading {
+  h3,
+  .page-title {
+    font-family: $heading-font;
+    font-size: 80px;
+    color: $white;
+
+    @include rmaxwd(375) {
+      font-size: 38px;
+    }
+    @include sm {
+      font-size: 40px;
+    }
+    @include md {
+      font-size: 70px;
+    }
+  }
+}
+.breadcrumb-wrapper {
+  text-align: center;
+}
+.breadcrumb-list {
+  font-family: $heading-font;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: initial;
+  text-transform: capitalize;
+  margin-bottom: 0;
+
+
+  span {
+    color: $white;
+
+
+    &.current-item {
+      color: $primary-color;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    display: inline-flex;
+    gap:0 12px;
+
+    @include rmaxwd(375) {
+      flex-direction: column;
+    }
+    li {
+      list-style: none;
+      display: inline-flex;
+      gap:0 12px;
+      align-items: center;
+      color: $white;
+      &.active {
+        color: $primary-color;
+
+        a {
+          color: $primary-color;
+        }
+      }
+      a {
+        font-family: $body-font;
+        font-size: 24px;
+        text-align: center;
+        color: $white;
+        text-transform: capitalize;
+        line-height: initial;
+        font-weight: 700;
+        margin-bottom: 0;
+        @include transition;
+
+
+        &:hover {
+          @include transition;
+          color: $primary-color;
+        }
+      }
+
+      &:before {
+        content: "\f054";
+        font-size: 12px;
+        color: #fff;
+        font-family: $font-awesome;
+        display: inline-flex;
+      }
+
+      &:first-child {
+        &:before {
+          display: none;
+
+          @include rmaxwd(375) {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+}

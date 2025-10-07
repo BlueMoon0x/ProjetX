@@ -1,0 +1,179 @@
+// .process-step-wrapper {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     gap: 100px;
+// }
+.te-process-step-wrapper {
+    &:nth-child(3n + 3) {
+        .te-process-step {
+            padding-right: 0;
+
+            @include md {
+                padding-right: 90px;
+                padding-left: 0;
+            }
+
+            .divider {
+                display: none;
+            }
+        }
+    }
+    &:nth-child(3n + 2) {
+        .te-process-step {
+            padding-right: 30px;
+            padding-left: 60px;
+
+            @include sm {
+                padding: 0;
+            }
+
+            .divider {
+                right: -40px;
+            }
+        }
+    }
+    &:nth-child(3n + 1) {
+        .te-process-step {
+            padding-left: 0;
+
+        }
+    }
+    &:last-child {
+        .te-process-step {
+           
+            .divider {
+                display: none;
+            }
+        }
+    }
+    .te-process-step {
+        padding-right: 90px;
+        padding-left: 115px;
+
+        @include sm {
+            padding: 0;
+        }
+    }
+}
+.te-process-step {
+    position: relative;
+
+    @include sm {
+        text-align: center;
+    }
+    .divider {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 15px;
+        width: 1px;
+        background-color: $primary-color;
+        
+        @include sm {
+            display: none;
+        }
+    }
+    &:hover {
+        .te-title-wrapper {
+            .icon-wrapper {
+                img {
+                    transform: rotateY(360deg);
+                    @include transition;
+                }
+            }
+        }
+
+      .content {
+        .te-read-more {
+            .te-theme-btn {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                color: $white;
+            }
+        }
+      }
+    }
+
+    .te-title-wrapper {
+        display: flex;
+        gap: 20px;
+        padding-bottom: 13px;
+        border-bottom: none;
+        transition: all 0.6s ease;
+        flex-direction: column;
+
+        @include sm {
+            text-align: center;
+            align-items: center;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            width: 65px;
+            height: 65px;
+            align-items: center;
+            justify-content: center;
+            
+            img {
+              @include transition;
+              transform: rotateY(0deg);
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                inset: 0;
+                padding: 1px;
+                border-radius: 0 0 5px 5px;
+                background: linear-gradient(280.36deg, transparent 20.42%, rgba(2, 193, 115, 0.40) 84.24%),
+              linear-gradient(0deg, transparent, transparent);
+                -webkit-mask: 
+                   linear-gradient(#fff 0 0) content-box, 
+                   linear-gradient(#fff 0 0);
+                        mask: 
+                   linear-gradient(#fff 0 0) content-box, 
+                   linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                        mask-composite: exclude;
+            }
+        }
+        .title {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 500;
+            margin: 0;
+            color: $white;
+            transition: all 0.6s ease;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .desc {
+            transition: all 0.6s ease;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 500;
+            margin: 0;
+            color: $text-color;
+        }
+        .te-read-more {
+            margin-top: -10px;
+
+            .te-theme-btn {
+                border: 1px solid $gray-200;
+                color: $primary-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+}
